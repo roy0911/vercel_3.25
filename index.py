@@ -3,9 +3,15 @@ from flask import Flask, render_template,request
 from datetime import datetime
 app = Flask(__name__)
 
-@app.route("/123")
+@app.route("/")
 def index():
-  return "Hello 邱建勳"
+  homepage = "<h1>邱建勳Python網頁</h1>"
+  homepage += "<a href=/mis>MIS</a><br>"
+  homepage += "<a href=/today>顯示日期時間</a><br>"
+  homepage += "<a href=/welcome?nick=chou>傳送使用者暱稱</a><br>"
+  homepage += "<a href=/account>網頁表單傳值</a><br>"
+  homepage += "<a href=/about>建勳簡介網頁</a><br>"
+  return homepage
 
 @app.route("/mis")
 def course():
